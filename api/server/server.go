@@ -193,7 +193,7 @@ func NewServer(conf Config) (*Server, error) {
 	if err != nil {
 		return nil, fmt.Errorf("creating faults index: %s", err)
 	}
-	dm, err := dealsModule.New(txndstr.Wrap(ds, "deals"), clientBuilder, deals.WithImportPath(filepath.Join(conf.RepoPath, "imports")))
+	dm, err := dealsModule.New(txndstr.Wrap(ds, "deals"), clientBuilder, time.Second*15, deals.WithImportPath(filepath.Join(conf.RepoPath, "imports")))
 	if err != nil {
 		return nil, fmt.Errorf("creating deal module: %s", err)
 	}

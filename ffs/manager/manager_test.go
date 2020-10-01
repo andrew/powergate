@@ -5,6 +5,7 @@ import (
 	"math/big"
 	"os"
 	"testing"
+	"time"
 
 	"github.com/filecoin-project/go-address"
 	"github.com/ipfs/go-datastore"
@@ -198,7 +199,7 @@ func newManager(clientBuilder lotus.ClientBuilder, ds datastore.TxnDatastore, ma
 		return nil, func() error { return nil }, err
 	}
 	pm := paych.New(clientBuilder)
-	dm, err := dealsModule.New(txndstr.Wrap(ds, "deals"), clientBuilder)
+	dm, err := dealsModule.New(txndstr.Wrap(ds, "deals"), clientBuilder, time.Second*15)
 	if err != nil {
 		return nil, func() error { return nil }, err
 	}
