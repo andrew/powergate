@@ -49,7 +49,7 @@ require (
 	github.com/multiformats/go-multihash v0.0.14
 	github.com/mwitkow/go-conntrack v0.0.0-20190716064945-2f068394615f // indirect
 	github.com/olekukonko/tablewriter v0.0.4
-	github.com/ory/dockertest/v3 v3.6.0
+	github.com/ory/dockertest/v3 v3.6.2
 	github.com/oschwald/geoip2-golang v1.4.0
 	github.com/rs/cors v1.7.0
 	github.com/spf13/cobra v1.0.0
